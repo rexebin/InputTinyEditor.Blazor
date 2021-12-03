@@ -84,7 +84,7 @@ Additional Parameters:
 @bind-Value="Model.Content" Height="300" Menubar="file edit view insert format tools table"/>
 ```
 
-2.	Additional configuration can be added through `Conf` parameter
+2.	Additional configurations can be added through `Conf` parameter
 
 ```razor
 <InputTinyMCEEditor.Blazor.InputTinyEditor For="() => Model.Content"
@@ -96,7 +96,8 @@ Additional Parameters:
     };
 }
 ```
-3. You can also add configuration via arbitrary parameters.
+
+3. You can also add configurations by adding key/value pairs as attributes.
 
 ```razor
 <InputTinyMCEEditor.Blazor.InputTinyEditor For="() => Model.Content"
@@ -115,7 +116,7 @@ Additional Parameters:
 
 ### Add Configurations via JavaScript Script
 
-1. For the configurations that include complex objects or functions, it is easier to add them via a script. By design, InputTinyEditor will look for `window. tinyMceConf` object and append to existing configurations. To add additional configurations, add a `script` tag in the `index.html` or `_layout.html`.
+1. For the configurations that include complex objects or functions, it is easier to add them via a script. By design, InputTinyEditor will look for `window.tinyMceConf` object and append to existing configurations. To add additional configurations, add a `script` tag in the `index.html` or `_layout.cshtml`.
 
 ```html
 <body>
@@ -143,7 +144,7 @@ Additional Parameters:
 </body>
 ```
 
-2. To hook up to TinyMCE Editor’s events, create a `window.tinyMceSetup` function that takes `editor` as parameter and add event on the `editor` as below. InputTinyEditor component will append this function to existing setup script. Note, `oninput` and `onchange` events are used to trigger validations. If you need to add extra behaviours to these two events, you can copy the code from source code and add your code.
+2. To hook up to TinyMCE Editor’s events, create a `window.tinyMceSetup` function that takes `editor` as parameter and add events on the `editor` as below. InputTinyEditor component will append this function to existing setup script. Note, `oninput` and `onchange` events are used to trigger validations. If you need to add extra behaviours to these two events, you can copy the code from source code and add your code.
 
 ```html
 <body>
