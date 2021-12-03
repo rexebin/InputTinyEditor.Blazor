@@ -8,18 +8,18 @@ An Input component wrapping TinyMCE Blazor Component,  to be used inside an Edit
 
 ### Nuget Manager
 
-Search for *InputTinyEditor.Blazor* and install.
+Search for *InputTinyMCEEditor.Blazor* and install.
 
 ### Powershell
 
 ```powershell
-Install-Package InputTinyEditor.Blazor
+Install-Package InputTinyMCEEditor.Blazor
 ```
 
 ### the dotnet CLI
 
 ```bash
-dotnet add package InputTinyEditor.Blazor
+dotnet add package InputTinyMCEEditor.Blazor
 ```
 
 ## Usage
