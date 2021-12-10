@@ -1,15 +1,6 @@
-﻿((inputTinyeEditor) => {
-    inputTinyEditor.setEditorInstance = (dotnetInstanceRef) =>
-        inputTinyEditor.tinyMceInstance = dotnetInstanceRef;
-
+﻿((inputTinyEditor) => {
     inputTinyEditor.editorConf = {
         setup: (editor) => {
-            editor.on('change', (e) => {
-                inputTinyEditor.tinyMceInstance && inputTinyEditor.tinyMceInstance.invokeMethodAsync('OnChange');
-            })
-            editor.on('input', (e) => {
-                inputTinyEditor.tinyMceInstance && inputTinyEditor.tinyMceInstance.invokeMethodAsync('OnInput');
-            })
             if (window.tinyMceSetup && typeof window.tinyMceSetup === 'function') {
                 window.tinyMceSetup(editor)
             }
@@ -161,6 +152,12 @@ window.tinymceBlazorWrapper = {
                     editor.setContent(value);
                 });
             });
+            editor.on('change', (e) => {
+                dotNetRef.invokeMethodAsync('OnChange');
+            })
+            editor.on('input', (e) => {
+                dotNetRef.invokeMethodAsync('OnInput');
+            })
             editor.on('setcontent', (e) => update('text', editor.getContent({ format: 'text' })));
             editor.on(blazorConf.modelEvents, (e) => {
                 update('html', editor.getContent());

@@ -2,6 +2,12 @@
 
 An Input component wrapping TinyMCE Blazor Component,  to be used inside an EditForm component. It offers the same validations experience as Blazor’s build-in form components out of the box. 
 
+# Changelog
+
+1. 1.0.0: Initial release
+
+1. 1.0.1: Validation is merged into the official TinyMCE Blazor component. This component offers a few configuration parameters for convenience.
+
 <img src="./InputTinyEditor.gif" alt="drawing" width="600"/>
 
 ## Installation
